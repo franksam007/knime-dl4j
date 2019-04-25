@@ -34,6 +34,7 @@ properties([
 
 	pipelineTriggers([upstream('knime-base/' + env.BRANCH_NAME.replaceAll('/', '%2F'))]),
 	buildDiscarder(logRotator(numToKeepStr: '5')),
+	disableConcurrentBuilds()
 ])
 
 
